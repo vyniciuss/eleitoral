@@ -1,4 +1,4 @@
-package com.vfs.domain;
+package com.vfs.domain.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

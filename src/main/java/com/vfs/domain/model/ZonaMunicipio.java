@@ -1,14 +1,12 @@
-package com.vfs.domain;
-
-import java.util.HashSet;
-import java.util.Set;
+package com.vfs.domain.model;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 import lombok.Builder;
@@ -19,19 +17,20 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
 @Entity
-public class Municipio implements java.io.Serializable {
+public class ZonaMunicipio implements java.io.Serializable {
 
-	private static final long serialVersionUID = 612854214824798593L;
+	private static final long serialVersionUID = 8842567329920688425L;
 	@EqualsAndHashCode.Include
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(nullable = false)
 	@NotNull
-	private String nomeMunicipio;
+	private Municipio municipio;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(nullable = false)
 	@NotNull
-	private Long numeroMunicipio;
-	@Builder.Default
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "municipio")
-	private Set<ZonaMunicipio> zonaMunicipios = new HashSet<ZonaMunicipio>();
+	private Zona zona;
 
 }

@@ -1,4 +1,4 @@
-package com.vfs.domain;
+package com.vfs.domain.model;
 
 import java.util.HashSet;
 import java.util.Set;

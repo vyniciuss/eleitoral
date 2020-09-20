@@ -1,4 +1,4 @@
-package com.vfs.domain;
+package com.vfs.domain.model;
 
 import java.io.Serializable;
 import java.time.OffsetDateTime;
