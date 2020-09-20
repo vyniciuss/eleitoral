@@ -1,6 +1,7 @@
 package com.vfs.domain.model;
 
 import java.io.Serializable;
+
 import java.time.OffsetDateTime;
 import java.util.Date;
 
@@ -23,10 +24,14 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import com.vfs.domain.enumeration.SituacaoCadastro;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
